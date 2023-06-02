@@ -4,9 +4,10 @@ var chalk = require('chalk')
 
 module.exports = duration
 
-var prefix = '[' + chalk.green('gulp') + '] '
 
-function duration(name) {
+function duration(name, prefix) {
+  var prefix = '[' + chalk.green(prefix) + '] '
+
   var start  = process.hrtime()
   var stream = through.obj({
     objectMode: true
